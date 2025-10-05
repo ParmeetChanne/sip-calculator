@@ -17,7 +17,6 @@ panel_watt = st.sidebar.number_input("Panel Wattage (W)", min_value=100, max_val
 sunlight_hours = st.sidebar.slider("Average Sunlight (hrs/day)", 2.0, 8.0, 4.0, 0.5)
 electricity_rate = st.sidebar.number_input("Electricity Rate ($/kWh)", min_value=0.05, max_value=0.50, value=0.18, step=0.01)
 panel_cost = st.sidebar.number_input("Cost per Panel ($)", min_value=100, max_value=1000, value=300)
-co2_savings_per_shelter = st.sidebar.number_input("CO₂ Savings vs Stick Framing (%)", min_value=0, max_value=100, value=45)
 
 # --- Calculations ---
 daily_energy = (panel_watt * num_panels * sunlight_hours) / 1000  # kWh/day
@@ -63,7 +62,6 @@ st.subheader("🏗️ Engineering & Structural Insights")
 st.write(f"- Roof Load from Panels: **{total_weight:.1f} kg** total")
 st.write(f"- Roof Pressure: **{pressure:.1f} kg/m²** (Safe within SIP roof tolerance ≥250–300 kg/m²)")
 st.write(f"- Shelter Size: **{shelter_size} sq ft**, exceeds minimum livable space requirements")
-st.write(f"- SIP design offers **{co2_savings_per_shelter}% CO₂ reduction** compared to traditional framing.")
 
 st.markdown("---")
 st.markdown("✅ *This calculator helps quantify how sustainable and cost-effective your SIP + solar system is in real conditions.*")
